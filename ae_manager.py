@@ -50,7 +50,7 @@ class ae_manager:
 
     def get_compositions(self, proj_path):
         content = [] 
-        # setting info adobe typescript
+        # setting info adobe ExtendScript 
         f = open(self.DATA_FILE, "w")
         f.write(proj_path)
         f.close()
