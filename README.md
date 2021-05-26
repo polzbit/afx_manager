@@ -4,8 +4,8 @@ an module to extract image sequence and compositions names from adobe after effe
 
 ## Usage
 it has two basic functions:<br/>
-- extract image sequence <br/>
-- extract compositions names <br/>
+- extract image sequence using aerender tool <br/>
+- extract compositions names using ExtendScript <br/>
 
 ## License
 
