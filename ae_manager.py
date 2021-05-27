@@ -34,8 +34,8 @@ class ae_manager:
             for er in self.ae_errors:
                 if er in msg:
                     error_raised = True
-                    self.kill_aerender()
-                    self.kill_afx()
+                    self.kill("aerender.exe")
+                    self.kill("AfterFX.com")
                     process.kill()
                     break
             if error_raised:
@@ -71,7 +71,7 @@ class ae_manager:
                 ready_to_kill = True
             elif ready_to_kill and os.path.exists(self.DATA_FILE):
                 sleep(1)
-                self.kill_afx()
+                self.kill("AfterFX.com")
                 process.kill()
         
         f = open(self.DATA_FILE, "r")
@@ -87,17 +87,11 @@ class ae_manager:
         return content             
         
 
-    def kill_afx(self):
-        com = r'taskkill /im "AfterFX.com" /F'
+    def kill(self, processName):
+        com = r'taskkill /im "%s" /F' % (processName)
         process = subprocess.Popen(com, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, creationflags=subprocess.DETACHED_PROCESS, shell = False)
         for line in process.stdout:
             pass
         sleep(1)
 
-    def kill_aerender(self):
-        com = r'taskkill /im "aerender.exe" /F'
-        process = subprocess.Popen(com, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, creationflags=subprocess.DETACHED_PROCESS, shell = False)
-        for line in process.stdout:
-            pass
-        sleep(1)
-
+ 
