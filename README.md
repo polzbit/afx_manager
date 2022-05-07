@@ -1,11 +1,15 @@
-# AFX Manager
+# Adobe After Effects Wrapper
 
-an module to extract image sequence and compositions names from adobe after effects projects files.<br/>
+a wrapper for adobe after effects, it uses adobe ExtendScript to extract compositions info from render queue, extract psd sequence, render audio and render video from psd sequence. <br/>
+
 
 ## Usage
-it has two basic functions:<br/>
-- extract image sequence using aerender tool <br/>
-- extract compositions names using ExtendScript <br/>
+- set adobe after effects path in the config file. <br/>
+- for audio rendering make sure you have the preset 'WAV' in your adobe after effects presets, if not just create it.<br/>
+- for video rendering make sure you have the preset 'ProRes' in your adobe after effects presets, if not just create it.<br/>
+- check start.py for example
+## Future
+currently the scripts only render .mov video files, i'll be adding ffmepg support to render the psd sequence in other formats.
 
 ## License
 
